@@ -1,0 +1,218 @@
+<?xml version="1.0"?>
+<pnp:Provisioning xmlns:pnp="http://schemas.dev.office.com/PnP/2019/09/ProvisioningSchema">
+  <pnp:Preferences Generator="OfficeDevPnP.Core, Version=3.17.2001.0, Culture=neutral, PublicKeyToken=5e633289e95c321a" />
+  <pnp:Templates ID="CONTAINER-TEMPLATE-003F63D0051346C1AB2C390B51BBF0FA">
+    <pnp:ProvisioningTemplate ID="TEMPLATE-003F63D0051346C1AB2C390B51BBF0FA" Version="1" BaseSiteTemplate="GROUP#0" Scope="RootSite">
+      <pnp:Lists>
+        <pnp:ListInstance Title="Time Off Balances" Description="" DocumentTemplate="" OnQuickLaunch="true" TemplateType="100" Url="Lists/Time Off Balances" MinorVersionLimit="0" MaxVersionLimit="0" DraftVersionVisibility="0" TemplateFeatureID="00bfea71-de22-43b2-a848-c05709900100" EnableFolderCreation="false" DefaultDisplayFormUrl="{site}/Lists/Time Off Balances/DispForm.aspx" DefaultEditFormUrl="{site}/Lists/Time Off Balances/EditForm.aspx" DefaultNewFormUrl="{site}/Lists/Time Off Balances/NewForm.aspx" ImageUrl="/_layouts/15/images/itgen.png?rev=47" IrmExpire="false" IrmReject="false" IsApplicationList="false" ValidationFormula="" ValidationMessage="">
+          <pnp:ContentTypeBindings>
+            <pnp:ContentTypeBinding ContentTypeID="0x01" Default="true" />
+            <pnp:ContentTypeBinding ContentTypeID="0x0120" />
+          </pnp:ContentTypeBindings>
+          <pnp:Views>
+            <View Name="{689BA313-B54A-4960-9BD0-201C1FCBEAC2}" DefaultView="TRUE" MobileView="TRUE" MobileDefaultView="TRUE" Type="HTML" DisplayName="All Items" Url="{site}/Lists/Time Off Balances/AllItems.aspx" Level="1" BaseViewID="1" ContentTypeID="0x" ImageUrl="/_layouts/15/images/generic.png?rev=47">
+              <Query>
+                <OrderBy>
+                  <FieldRef Name="ID" />
+                </OrderBy>
+              </Query>
+              <ViewFields>
+                <FieldRef Name="LinkTitle" />
+                <FieldRef Name="Employee" />
+                <FieldRef Name="TimeOffType" />
+                <FieldRef Name="TimeOffType_x003a_Allotted_x0020" />
+                <FieldRef Name="RequestedTimeOff" />
+              </ViewFields>
+              <RowLimit Paged="TRUE">30</RowLimit>
+              <JSLink>clienttemplates.js</JSLink>
+              <CustomFormatter />
+            </View>
+          </pnp:Views>
+          <pnp:Fields>
+            <Field DisplayName="Employee" Format="Dropdown" List="UserInfo" Name="Employee" Title="Employee" Type="User" UserSelectionMode="0" UserSelectionScope="0" ID="{e3f1aad3-ce5e-41f8-9116-516341afdf11}" SourceID="{{listid:Time Off Balances}}" StaticName="Employee" ColName="int1" RowOrdinal="0" />
+            <Field Type="Lookup" DisplayName="TimeOffType" Required="FALSE" EnforceUniqueValues="FALSE" List="{listid:Time Off Types}" ShowField="Title" UnlimitedLengthInDocumentLibrary="FALSE" RelationshipDeleteBehavior="None" ID="{334fbd8f-733d-4597-93e5-9dfe683d79bc}" SourceID="{{listid:Time Off Balances}}" StaticName="TimeOffType" Name="TimeOffType" ColName="int2" RowOrdinal="0" Group="" Version="1" />
+            <Field Type="Lookup" DisplayName="TimeOffType:Allotted Time" List="{listid:Time Off Types}" WebId="{siteid}" ShowField="AllottedTime" FieldRef="334fbd8f-733d-4597-93e5-9dfe683d79bc" ReadOnly="TRUE" UnlimitedLengthInDocumentLibrary="FALSE" ID="{78bd2ff6-4421-4669-b0d1-8c9ea779cb1d}" SourceID="{{listid:Time Off Balances}}" StaticName="TimeOffType_x003a_Allotted_x0020" Name="TimeOffType_x003a_Allotted_x0020" Version="1" />
+            <Field DisplayName="RequestedTimeOff" Format="Dropdown" Name="RequestedTimeOff" Percentage="FALSE" Title="RequestedTimeOff" Type="Number" ID="{aafc235f-5140-4f35-babd-f9447be03d4b}" SourceID="{{listid:Time Off Balances}}" StaticName="RequestedTimeOff" ColName="float1" RowOrdinal="0" />
+          </pnp:Fields>
+        </pnp:ListInstance>
+        <pnp:ListInstance Title="Time Off Types" Description="" DocumentTemplate="" OnQuickLaunch="true" TemplateType="100" Url="Lists/Time Off Types" MinorVersionLimit="0" MaxVersionLimit="0" DraftVersionVisibility="0" TemplateFeatureID="00bfea71-de22-43b2-a848-c05709900100" EnableFolderCreation="false" DefaultDisplayFormUrl="{site}/Lists/Time Off Types/DispForm.aspx" DefaultEditFormUrl="{site}/Lists/Time Off Types/EditForm.aspx" DefaultNewFormUrl="{site}/Lists/Time Off Types/NewForm.aspx" ImageUrl="/_layouts/15/images/itgen.png?rev=47" IrmExpire="false" IrmReject="false" IsApplicationList="false" ValidationFormula="" ValidationMessage="">
+          <pnp:ContentTypeBindings>
+            <pnp:ContentTypeBinding ContentTypeID="0x01" Default="true" />
+            <pnp:ContentTypeBinding ContentTypeID="0x0120" />
+          </pnp:ContentTypeBindings>
+          <pnp:Views>
+            <View Name="{82B7BED4-8C66-4AE6-BE2B-29122CA7AFC1}" DefaultView="TRUE" MobileView="TRUE" MobileDefaultView="TRUE" Type="HTML" DisplayName="All Items" Url="{site}/Lists/Time Off Types/AllItems.aspx" Level="1" BaseViewID="1" ContentTypeID="0x" ImageUrl="/_layouts/15/images/generic.png?rev=47">
+              <Query>
+                <OrderBy>
+                  <FieldRef Name="ID" />
+                </OrderBy>
+              </Query>
+              <ViewFields>
+                <FieldRef Name="LinkTitle" />
+                <FieldRef Name="AllottedTime" />
+              </ViewFields>
+              <RowLimit Paged="TRUE">30</RowLimit>
+              <JSLink>clienttemplates.js</JSLink>
+              <CustomFormatter />
+            </View>
+          </pnp:Views>
+          <pnp:Fields>
+            <Field DisplayName="Allotted Time" Format="Dropdown" Name="AllottedTime" Percentage="FALSE" Title="Allotted Time" Type="Number" ID="{f722a92c-dd4b-4966-a7b9-ddfec80b2b0b}" SourceID="{{listid:Time Off Types}}" StaticName="AllottedTime" ColName="float1" RowOrdinal="0" />
+          </pnp:Fields>
+          <pnp:DataRows UpdateBehavior="Overwrite">
+            <pnp:DataRow>
+              <pnp:DataValue FieldName="Title">Vacation</pnp:DataValue>
+              <pnp:DataValue FieldName="AllottedTime">15</pnp:DataValue>
+              <pnp:DataValue FieldName="Order">100</pnp:DataValue>
+              <pnp:DataValue FieldName="FileLeafRef">1_.000</pnp:DataValue>
+              <pnp:DataValue FieldName="MetaInfo" />
+            </pnp:DataRow>
+            <pnp:DataRow>
+              <pnp:DataValue FieldName="Title">Sick Leave</pnp:DataValue>
+              <pnp:DataValue FieldName="AllottedTime">10</pnp:DataValue>
+              <pnp:DataValue FieldName="Order">200</pnp:DataValue>
+              <pnp:DataValue FieldName="FileLeafRef">2_.000</pnp:DataValue>
+              <pnp:DataValue FieldName="MetaInfo" />
+            </pnp:DataRow>
+            <pnp:DataRow>
+              <pnp:DataValue FieldName="Title">Floating Holiday</pnp:DataValue>
+              <pnp:DataValue FieldName="AllottedTime">2</pnp:DataValue>
+              <pnp:DataValue FieldName="Order">300</pnp:DataValue>
+              <pnp:DataValue FieldName="FileLeafRef">3_.000</pnp:DataValue>
+              <pnp:DataValue FieldName="MetaInfo" />
+            </pnp:DataRow>
+            <pnp:DataRow>
+              <pnp:DataValue FieldName="Title">Jury Duty</pnp:DataValue>
+              <pnp:DataValue FieldName="AllottedTime">5</pnp:DataValue>
+              <pnp:DataValue FieldName="Order">400</pnp:DataValue>
+              <pnp:DataValue FieldName="FileLeafRef">4_.000</pnp:DataValue>
+              <pnp:DataValue FieldName="MetaInfo" />
+            </pnp:DataRow>
+            <pnp:DataRow>
+              <pnp:DataValue FieldName="Title">Bereavement</pnp:DataValue>
+              <pnp:DataValue FieldName="AllottedTime">5</pnp:DataValue>
+              <pnp:DataValue FieldName="Order">500</pnp:DataValue>
+              <pnp:DataValue FieldName="FileLeafRef">5_.000</pnp:DataValue>
+              <pnp:DataValue FieldName="MetaInfo" />
+            </pnp:DataRow>
+          </pnp:DataRows>
+          <pnp:Webhooks>
+            <pnp:Webhook ServerNotificationUrl="https://4-eastus1.pushp.svc.ms/notifications?token=w0-0786b7c3-9c5b-4442-8be3-f18cacb6176a" ExpiresInDays="1" />
+          </pnp:Webhooks>
+        </pnp:ListInstance>
+        <pnp:ListInstance Title="Time Off Requests" Description="" DocumentTemplate="" OnQuickLaunch="true" TemplateType="100" Url="Lists/Time Off Requests" MinorVersionLimit="0" MaxVersionLimit="0" DraftVersionVisibility="0" TemplateFeatureID="00bfea71-de22-43b2-a848-c05709900100" EnableFolderCreation="false" DefaultDisplayFormUrl="{site}/Lists/Time Off Requests/DispForm.aspx" DefaultEditFormUrl="{site}/Lists/Time Off Requests/EditForm.aspx" DefaultNewFormUrl="{site}/Lists/Time Off Requests/NewForm.aspx" ImageUrl="/_layouts/15/images/itgen.png?rev=47" IrmExpire="false" IrmReject="false" IsApplicationList="false" ValidationFormula="" ValidationMessage="">
+          <pnp:ContentTypeBindings>
+            <pnp:ContentTypeBinding ContentTypeID="0x01" Default="true" />
+            <pnp:ContentTypeBinding ContentTypeID="0x0120" />
+          </pnp:ContentTypeBindings>
+          <pnp:Views>
+            <View Name="{E1DFEF3F-D3A6-4ED2-88FB-5597B6CA291C}" DefaultView="TRUE" MobileView="TRUE" MobileDefaultView="TRUE" Type="HTML" DisplayName="All Items" Url="{site}/Lists/Time Off Requests/AllItems.aspx" Level="1" BaseViewID="1" ContentTypeID="0x" ImageUrl="/_layouts/15/images/generic.png?rev=47">
+              <Query>
+                <OrderBy>
+                  <FieldRef Name="ID" />
+                </OrderBy>
+              </Query>
+              <ViewFields>
+                <FieldRef Name="LinkTitle" />
+                <FieldRef Name="From" />
+                <FieldRef Name="To" />
+                <FieldRef Name="TimeOffType" />
+                <FieldRef Name="Days" />
+                <FieldRef Name="Status" />
+              </ViewFields>
+              <RowLimit Paged="TRUE">30</RowLimit>
+              <JSLink>clienttemplates.js</JSLink>
+              <CustomFormatter />
+            </View>
+          </pnp:Views>
+          <pnp:Fields>
+            <Field DisplayName="From" FriendlyDisplayFormat="Disabled" Format="DateOnly" Name="From" Title="From" Type="DateTime" ID="{0deaaa2e-4567-4deb-911b-66ec2b4bdf9d}" SourceID="{{listid:Time Off Requests}}" StaticName="From" ColName="datetime1" RowOrdinal="0" />
+            <Field DisplayName="To" FriendlyDisplayFormat="Disabled" Format="DateOnly" Name="To" Title="To" Type="DateTime" ID="{e431143c-7c41-4eb1-9a20-f5ec0761079f}" SourceID="{{listid:Time Off Requests}}" StaticName="To" ColName="datetime2" RowOrdinal="0" />
+            <Field DisplayName="TimeOffType" FillInChoice="FALSE" Format="Dropdown" Name="TimeOffType" Title="TimeOffType" Type="Choice" ID="{78ffd541-dfb2-4d03-b192-5efa1aafa192}" SourceID="{{listid:Time Off Requests}}" StaticName="TimeOffType" ColName="nvarchar4" RowOrdinal="0">
+              <CHOICES>
+                <CHOICE>Vacation</CHOICE>
+                <CHOICE>Sick Leave</CHOICE>
+                <CHOICE>Floating Holiday</CHOICE>
+                <CHOICE>Jury Duty</CHOICE>
+                <CHOICE>Bereavement</CHOICE>
+              </CHOICES>
+            </Field>
+            <Field Decimals="0" DisplayName="Days" Format="Dropdown" Name="Days" Percentage="FALSE" Title="Days" Type="Number" ID="{fdce2203-5a1e-4a96-ab37-f65cde3cf9c6}" SourceID="{{listid:Time Off Requests}}" StaticName="Days" ColName="float1" RowOrdinal="0" />
+            <Field DisplayName="Status" FillInChoice="FALSE" Format="Dropdown" Name="Status" Title="Status" Type="Choice" ID="{75f9eadb-48c6-4cd0-abf8-429a62534f9e}" SourceID="{{listid:Time Off Requests}}" StaticName="Status" ColName="nvarchar5" RowOrdinal="0" CustomFormatter="" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" Version="1">
+              <CHOICES>
+                <CHOICE>Pending</CHOICE>
+                <CHOICE>Approved</CHOICE>
+                <CHOICE>Denied</CHOICE>
+              </CHOICES>
+              <Default>Pending</Default>
+            </Field>
+          </pnp:Fields>
+          <pnp:DataRows UpdateBehavior="Overwrite">
+            <pnp:DataRow>
+              <pnp:DataValue FieldName="Title">adunnam@axecapitalcorp.onmicrosoft.com</pnp:DataValue>
+              <pnp:DataValue FieldName="From">1/20/2020 8:00:00 AM</pnp:DataValue>
+              <pnp:DataValue FieldName="To">1/24/2020 8:00:00 AM</pnp:DataValue>
+              <pnp:DataValue FieldName="TimeOffType">Jury Duty</pnp:DataValue>
+              <pnp:DataValue FieldName="Days">5</pnp:DataValue>
+              <pnp:DataValue FieldName="Status">Pending</pnp:DataValue>
+              <pnp:DataValue FieldName="Order">100</pnp:DataValue>
+              <pnp:DataValue FieldName="FileLeafRef">1_.000</pnp:DataValue>
+              <pnp:DataValue FieldName="MetaInfo" />
+            </pnp:DataRow>
+            <pnp:DataRow>
+              <pnp:DataValue FieldName="Title">adunnam@axecapitalcorp.onmicrosoft.com</pnp:DataValue>
+              <pnp:DataValue FieldName="From">1/13/2020 8:00:00 AM</pnp:DataValue>
+              <pnp:DataValue FieldName="To">1/13/2020 8:00:00 AM</pnp:DataValue>
+              <pnp:DataValue FieldName="TimeOffType">Bereavement</pnp:DataValue>
+              <pnp:DataValue FieldName="Days">1</pnp:DataValue>
+              <pnp:DataValue FieldName="Status">Pending</pnp:DataValue>
+              <pnp:DataValue FieldName="Order">200</pnp:DataValue>
+              <pnp:DataValue FieldName="FileLeafRef">2_.000</pnp:DataValue>
+              <pnp:DataValue FieldName="MetaInfo" />
+            </pnp:DataRow>
+          </pnp:DataRows>
+          <pnp:Webhooks>
+            <pnp:Webhook ServerNotificationUrl="https://unitedstates-002.azure-apim.net/apim/sharepointonline/ontableupdatedhook?r=https%253a%252f%252fprod-113.westus.logic.azure.com%252fworkflows%252f99af007beb30435d9930736d75546129%252ftriggers%252fWhen_an_item_is_created%252fpaths%252finvoke%253fapi-version%253d2016-06-01%2526sp%253d%25252Ftriggers%25252FWhen_an_item_is_created%25252Frun%25252C%25252Ftriggers%25252FWhen_an_item_is_created%25252Fread%2526sv%253d1.0%2526sig%253d3_6n3ONPg6vbvJ5ODBtGkxkO_1g0w3lmII1MGWLiQPI" ExpiresInDays="4" />
+          </pnp:Webhooks>
+        </pnp:ListInstance>
+        <pnp:ListInstance Title="TimeOffApprovers" Description="" DocumentTemplate="" OnQuickLaunch="true" TemplateType="100" Url="Lists/TimeOffApprovers" MinorVersionLimit="0" MaxVersionLimit="0" DraftVersionVisibility="0" TemplateFeatureID="00bfea71-de22-43b2-a848-c05709900100" EnableFolderCreation="false" DefaultDisplayFormUrl="{site}/Lists/TimeOffApprovers/DispForm.aspx" DefaultEditFormUrl="{site}/Lists/TimeOffApprovers/EditForm.aspx" DefaultNewFormUrl="{site}/Lists/TimeOffApprovers/NewForm.aspx" ImageUrl="/_layouts/15/images/itgen.png?rev=47" IrmExpire="false" IrmReject="false" IsApplicationList="false" ValidationFormula="" ValidationMessage="">
+          <pnp:ContentTypeBindings>
+            <pnp:ContentTypeBinding ContentTypeID="0x01" Default="true" />
+            <pnp:ContentTypeBinding ContentTypeID="0x0120" />
+          </pnp:ContentTypeBindings>
+          <pnp:Views>
+            <View Name="{52290CB6-8834-4A31-802B-953B421DA9DC}" DefaultView="TRUE" MobileView="TRUE" MobileDefaultView="TRUE" Type="HTML" DisplayName="All Items" Url="{site}/Lists/TimeOffApprovers/AllItems.aspx" Level="1" BaseViewID="1" ContentTypeID="0x" ImageUrl="/_layouts/15/images/generic.png?rev=47">
+              <Query>
+                <OrderBy>
+                  <FieldRef Name="ID" />
+                </OrderBy>
+              </Query>
+              <ViewFields>
+                <FieldRef Name="LinkTitle" />
+                <FieldRef Name="Email" />
+              </ViewFields>
+              <RowLimit Paged="TRUE">30</RowLimit>
+              <JSLink>clienttemplates.js</JSLink>
+              <CustomFormatter />
+            </View>
+          </pnp:Views>
+          <pnp:Fields>
+            <Field DisplayName="Email" Format="Dropdown" MaxLength="255" Name="Email" Title="Email" Type="Text" ID="{266cd3f0-4173-4f86-b7d9-17fedf07e759}" SourceID="{{listid:TimeOffApprovers}}" StaticName="Email" ColName="nvarchar4" RowOrdinal="0" />
+          </pnp:Fields>
+          <pnp:DataRows UpdateBehavior="Overwrite">
+            <pnp:DataRow>
+              <pnp:DataValue FieldName="Title">April Dunnam</pnp:DataValue>
+              <pnp:DataValue FieldName="Email">test</pnp:DataValue>
+              <pnp:DataValue FieldName="Order">100</pnp:DataValue>
+              <pnp:DataValue FieldName="FileLeafRef">1_.000</pnp:DataValue>
+              <pnp:DataValue FieldName="MetaInfo" />
+            </pnp:DataRow>
+          </pnp:DataRows>
+          <pnp:Webhooks>
+            <pnp:Webhook ServerNotificationUrl="https://19-eastus1.pushp.svc.ms/notifications?token=w3-8bb3451e-1b0d-4cac-8dfd-56ff5e4a0cc3" ExpiresInDays="1" />
+          </pnp:Webhooks>
+        </pnp:ListInstance>
+      </pnp:Lists>
+    </pnp:ProvisioningTemplate>
+  </pnp:Templates>
+</pnp:Provisioning>
