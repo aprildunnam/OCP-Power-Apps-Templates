@@ -1,3 +1,3 @@
 # Microsoft
 
-Repo for Partner Templates
+This repo contains Power Apps Templates
